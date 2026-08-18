@@ -1,0 +1,131 @@
+/* Tokyo Gogh Alt theme for Zen Browser */
+
+:root {
+  --zen-bg: #1a1b26;
+  --zen-bg-alt: #1d1f2d;
+  --zen-bg-tab: #222332;
+
+  --zen-fg: #c0caf5;
+  --zen-muted: #545964;
+  --zen-dim: #676f7d;
+
+  --zen-blue: #6199ef;
+  --zen-bright-blue: #7aa2f7;
+  --zen-cyan: #36c0c0;
+  --zen-green: #72c369;
+  --zen-red: #eb6572;
+  --zen-pink: #f7768e;
+  --zen-orange: #e08f68;
+  --zen-yellow: #e5c07b;
+  --zen-purple: #c678dd;
+
+  --zen-border: #414868;
+  --zen-selection: #1f253f;
+
+  /* Zen's own theme variables */
+  --zen-primary-color: var(--zen-blue) !important;
+  --zen-colors-border: var(--zen-border) !important;
+  --toolbar-bgcolor: var(--zen-bg) !important;
+  --toolbar-color: var(--zen-fg) !important;
+  --lwt-accent-color: var(--zen-bg) !important;
+  --lwt-accent-color-inactive: var(--zen-bg) !important;
+  --zen-border-radius: 15px !important;
+}
+
+/* Sidebar and toolbar background */
+#navigator-toolbox,
+#TabsToolbar,
+#sidebar-box,
+#sidebar {
+  background-color: var(--zen-bg) !important;
+  color: var(--zen-fg) !important;
+}
+
+/* Tabs */
+.tabbrowser-tab {
+  border-radius: 8px !important;
+  color: var(--zen-muted) !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+  background-color: var(--zen-bg-tab) !important;
+  color: var(--zen-fg) !important;
+}
+
+.tabbrowser-tab:hover {
+  background-color: var(--zen-selection) !important;
+}
+
+/* URL bar */
+#urlbar-background {
+  background-color: var(--zen-bg-alt) !important;
+  border: 1px solid var(--zen-border) !important;
+  border-radius: 10px !important;
+}
+
+#urlbar,
+#urlbar-input {
+  color: var(--zen-fg) !important;
+}
+
+/* Buttons and toolbar icons */
+.toolbarbutton-icon {
+  fill: var(--zen-fg) !important;
+}
+
+.toolbarbutton-1:hover {
+  background-color: var(--zen-selection) !important;
+  border-radius: 6px !important;
+}
+
+/* Active/selected accents */
+.tab-close-button:hover,
+toolbarbutton[open="true"] {
+  background-color: var(--zen-blue) !important;
+}
+
+/* Font */
+:root,
+#urlbar,
+.tabbrowser-tab .tab-label {
+  font-family: "JetBrainsMono Nerd Font", monospace !important;
+}
+
+
+/* =========================================================
+   SIDEBAR / WINDOW OVERRIDES
+   ========================================================= */
+
+/* Sidebar background */
+:root #zen-sidebar-web-panel,
+:root #zen-sidebar-web-panel-wrapper,
+:root #sidebar-box,
+:root #sidebar,
+:root #sidebar-header,
+:root #sidebar-search-container {
+  background: var(--zen-bg) !important;
+  background-color: var(--zen-bg) !important;
+  color: var(--zen-fg) !important;
+}
+
+/* Remove unwanted sidebar border/shadow */
+:root #sidebar-box {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Main browser/window background */
+:root #main-window,
+:root #browser,
+:root #appcontent {
+  background: var(--zen-bg) !important;
+  background-color: var(--zen-bg) !important;
+}
+
+/* Force toolbar/window theme colours */
+:root {
+  --toolbar-bgcolor: var(--zen-bg) !important;
+  --toolbar-color: var(--zen-fg) !important;
+  --lwt-accent-color: var(--zen-bg) !important;
+  --lwt-accent-color-inactive: var(--zen-bg) !important;
+}
