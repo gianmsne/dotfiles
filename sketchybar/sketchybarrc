@@ -1,0 +1,170 @@
+# Tokyo Gogh Alt themed configuration.
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+##### Tokyo Gogh Alt Palette #####
+
+BG=0xff1a1b26
+BG_ALT=0xff1d1f2d
+BG_TAB=0xff222332
+
+FG=0xffc0caf5
+MUTED=0xff545964
+DIM=0xff676f7d
+
+BLUE=0xff6199ef
+BRIGHT_BLUE=0xff7aa2f7
+CYAN=0xff36c0c0
+GREEN=0xff72c369
+RED=0xffeb6572
+PINK=0xfff7768e
+ORANGE=0xffe08f68
+YELLOW=0xffe5c07b
+PURPLE=0xffc678dd
+BLACK=0xff000000
+
+BORDER=0xff414868
+SELECTION=0xff1f253f
+
+##### Bar Appearance #####
+
+sketchybar --bar \
+  position=top \
+  height=32 \
+  margin=0 \
+  y_offset=0 \
+  corner_radius=0 \
+  blur_radius=30 \
+  color=$BLACK
+
+
+### If yabai:
+# sketchybar --bar \
+#   position=top \
+#   height=40 \
+#   margin=20 \
+#   y_offset=5 \
+#   corner_radius=15 \
+#   blur_radius=30 \
+#   color=$BG
+
+##### Changing Defaults #####
+
+default=(
+  padding_left=5
+  padding_right=5
+
+  icon.font="JetBrainsMono Nerd Font:SemiBold:12.0"
+  label.font="JetBrainsMono Nerd Font:SemiBold:12.0"
+
+  icon.color=$FG
+  label.color=$FG
+
+  icon.padding_left=4
+  icon.padding_right=4
+  label.padding_left=4
+  label.padding_right=4
+)
+
+sketchybar --default "${default[@]}"
+
+
+##### Adding Apple Icon
+
+sketchybar --add item apple left \
+           --set apple \
+             icon="􀣺" \
+             icon.font="JetBrainsMono Nerd Font:SemiBold:16.0" \
+             icon.color=$RED \
+             label.drawing=off \
+             click_script="open -a 'System Settings'"
+
+##### Adding Mission Control Space Indicators #####
+
+SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10")
+
+for i in "${!SPACE_ICONS[@]}"
+do
+  sid="$(($i+1))"
+
+  space=(
+    space="$sid"
+
+    icon="${SPACE_ICONS[i]}"
+    icon.color=$MUTED
+
+    icon.padding_left=7
+    icon.padding_right=7
+
+    background.color=$BG_ALT
+    background.corner_radius=5
+    background.height=25
+
+    label.drawing=off
+
+    script="$PLUGIN_DIR/space.sh"
+    click_script="yabai -m space --focus $sid"
+  )
+
+  sketchybar --add space space."$sid" left \
+             --set space."$sid" "${space[@]}"
+done
+
+##### Adding Left Items #####
+
+sketchybar --add item chevron left \
+           --set chevron \
+             icon= \
+             icon.color=$BLUE \
+             label.drawing=off
+
+sketchybar --add item front_app left \
+           --set front_app \
+             icon.drawing=off \
+             label.color=$FG \
+             script="$PLUGIN_DIR/front_app.sh" \
+           --subscribe front_app front_app_switched
+
+##### Adding Right Items #####
+
+sketchybar --add item clock right \
+           --set clock \
+             update_freq=10 \
+             icon= \
+             icon.color=$PURPLE \
+             script="$PLUGIN_DIR/clock.sh"
+
+sketchybar --add item volume right \
+           --set volume \
+             icon.color=$CYAN \
+             script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change
+
+sketchybar --add item battery right \
+           --set battery \
+             update_freq=120 \
+             icon.color=$GREEN \
+             script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change
+
+sketchybar --add item cpu right \
+           --set cpu \
+             update_freq=2 \
+             icon="CPU:" \
+             icon.color=$RED \
+             icon.font="JetBrainsMono Nerd Font:SemiBold:12.0" \
+             label.color=$FG \
+             script="$PLUGIN_DIR/cpu.sh"
+
+sketchybar --add item ram right \
+           --set ram \
+             update_freq=5 \
+             icon="RAM:" \
+             icon.color=$RED \
+             icon.font="JetBrainsMono Nerd Font:SemiBold:12.0" \
+             label.color=$FG \
+             script="$PLUGIN_DIR/ram.sh"
+
+##### Force all scripts to run the first time #####
+
+sketchybar --update

@@ -1,0 +1,32 @@
+# OS files
+.DS_Store
+.Trashes
+Thumbs.db
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Shell history
+.bash_history
+.zsh_history
+.python_history
+
+# Secrets / credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+
+# Temporary files
+*.tmp
+*.log
+.cache/
+
+# Local machine-specific files
+.local/
