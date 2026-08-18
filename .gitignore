@@ -30,3 +30,5 @@ credentials.json
 
 # Local machine-specific files
 .local/
+
+HELP.md
