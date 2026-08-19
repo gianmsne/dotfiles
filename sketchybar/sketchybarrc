@@ -12,16 +12,16 @@ FG=0xffc0caf5
 MUTED=0xff545964
 DIM=0xff676f7d
 
-BLUE=0xff6199ef
-BRIGHT_BLUE=0xff7aa2f7
-CYAN=0xff36c0c0
-GREEN=0xff72c369
-RED=0xffeb6572
-PINK=0xfff7768e
-ORANGE=0xffe08f68
-YELLOW=0xffe5c07b
-PURPLE=0xffc678dd
-BLACK=0xff000000
+BLUE=0xff6199ef         # #6199ef
+BRIGHT_BLUE=0xff7aa2f7  # #7aa2f7
+CYAN=0xff36c0c0         # #36c0c0
+GREEN=0xff72c369        # #72c369
+RED=0xffeb6572          # #eb6572
+PINK=0xfff7768e         # #f7768e
+ORANGE=0xffe08f68       # #e08f68
+YELLOW=0xffe5c07b       # #e5c07b
+PURPLE=0xffc678dd       # #c678dd
+BLACK=0xff000000        # #000000
 
 BORDER=0xff414868
 SELECTION=0xff1f253f
@@ -35,7 +35,7 @@ sketchybar --bar \
   y_offset=0 \
   corner_radius=0 \
   blur_radius=30 \
-  color=$BLACK
+  color=0xff1b1b27
 
 
 ### If yabai:

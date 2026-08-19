@@ -56,19 +56,39 @@
   background-color: var(--zen-selection) !important;
 }
 
-/* URL bar */
-#urlbar-background {
-  background-color: var(--zen-bg-alt) !important;
-  border: 1px solid var(--zen-border) !important;
+/* =========================================================
+   ESSENTIAL / PINNED TAB TILES (top-left icon grid)
+   Fixes the light-gray "clipped" tile background that shows
+   through because these use a separate .tab-background node
+   that isn't covered by the generic .tabbrowser-tab rules above.
+   ========================================================= */
+.tabbrowser-tab[zen-essential="true"] .tab-background,
+.tabbrowser-tab[pinned] .tab-background {
+  background-color: var(--zen-bg-tab) !important;
   border-radius: 10px !important;
+  border: 1px solid var(--zen-border) !important;
+  box-shadow: none !important;
 }
 
-#urlbar,
-#urlbar-input {
-  color: var(--zen-fg) !important;
+.tabbrowser-tab[zen-essential="true"]:hover .tab-background,
+.tabbrowser-tab[pinned]:hover .tab-background {
+  background-color: var(--zen-selection) !important;
+  border-color: var(--zen-blue) !important;
 }
 
-/* Buttons and toolbar icons */
+.tabbrowser-tab[zen-essential="true"][selected="true"] .tab-background,
+.tabbrowser-tab[pinned][selected="true"] .tab-background {
+  background-color: var(--zen-bg-tab) !important;
+  border-color: var(--zen-bright-blue) !important;
+}
+
+/* Kill any leftover default fill behind the tile icon/label itself */
+.tabbrowser-tab[zen-essential="true"],
+.tabbrowser-tab[pinned] {
+  background-color: transparent !important;
+}
+
+/* Button and toolbar icons */
 .toolbarbutton-icon {
   fill: var(--zen-fg) !important;
 }
@@ -112,6 +132,20 @@ toolbarbutton[open="true"] {
 :root #sidebar-box {
   border: none !important;
   box-shadow: none !important;
+}
+
+/* Sidebar resize handle (the blocky strip on the right edge of the sidebar) */
+:root #sidebar-splitter,
+:root .sidebar-splitter {
+  background-color: var(--zen-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 1px !important;
+}
+
+:root #sidebar-splitter:hover,
+:root .sidebar-splitter:hover {
+  background-color: var(--zen-border) !important;
 }
 
 /* Main browser/window background */

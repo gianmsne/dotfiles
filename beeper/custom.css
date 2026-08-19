@@ -1,0 +1,255 @@
+/* === ROOT VARIABLES — TOKYO GOGH ALT === */
+:root {
+  --font-family: "JetBrainsMono Nerd Font", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+
+  --header-height: 48px;
+  --filters-pane-width: 220px;
+  --min-sidebar-width: 280px;
+  --max-sidebar-width: 800px;
+  --threads-list-item-height: 54px;
+
+  --pinned-thread-base-size: 64px;
+  --pinned-thread-group-img-size: calc(var(--pinned-thread-base-size) / 1.5);
+  --pinned-thread-height: calc(var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 1.4));
+  --pinned-thread-width: calc(var(--pinned-thread-base-size) + (var(--pinned-thread-base-size) / 2.5));
+
+  /* Base Colors — Tokyo Gogh Alt */
+  --color-bg: #1a1b26;
+  --color-bg-rgb: 26, 27, 38;
+  --color-fg: #c0caf5;
+  --color-fg-rgb: 192, 202, 245;
+
+  /* Accent/Primary */
+  --color-primary: #6199ef;
+  --color-primary-rgb: 97, 153, 239;
+
+  --color-gray-rgb: 84, 89, 100; /* muted */
+
+  /* Base Color Tokens */
+  --color-base-black: #14151f;
+  --color-base-black-rgb: 20, 21, 31;
+  --color-base-white: #c0caf5;
+  --color-base-white-rgb: 192, 202, 245;
+
+  /* Gray Scale */
+  --color-base-gray-10: #14151f;
+  --color-base-gray-10-rgb: 20, 21, 31;
+  --color-base-gray-20: #1a1b26;
+  --color-base-gray-20-rgb: 26, 27, 38;
+  --color-base-gray-30: #1d1f2d;
+  --color-base-gray-30-rgb: 29, 31, 45;
+  --color-base-gray-40: #222332;
+  --color-base-gray-40-rgb: 34, 35, 50;
+  --color-base-gray-50: #1f253f; /* selection */
+  --color-base-gray-50-rgb: 31, 37, 63;
+  --color-base-gray-60: #414868; /* border */
+  --color-base-gray-60-rgb: 65, 72, 104;
+  --color-base-gray-70: #545964; /* muted */
+  --color-base-gray-70-rgb: 84, 89, 100;
+  --color-base-gray-80: #676f7d; /* dim */
+  --color-base-gray-80-rgb: 103, 111, 125;
+  --color-base-gray-85: #7aa2f7; /* bright blue */
+  --color-base-gray-85-rgb: 122, 162, 247;
+  --color-base-gray-90: #c0caf5;
+  --color-base-gray-90-rgb: 192, 202, 245;
+  --color-base-gray-100: #c0caf5;
+  --color-base-gray-100-rgb: 192, 202, 245;
+  --color-base-gray-110: #a9b6e8;
+  --color-base-gray-110-rgb: 169, 182, 232;
+  --color-base-gray-120: #ffffff;
+  --color-base-gray-120-rgb: 255, 255, 255;
+
+  /* Syntax Palette */
+  --color-dracula-red: #eb6572;
+  --color-dracula-orange: #e08f68;
+  --color-dracula-yellow: #e5c07b;
+  --color-dracula-green: #72c369;
+  --color-dracula-cyan: #36c0c0;
+  --color-dracula-purple: #c678dd;
+  --color-dracula-pink: #f7768e;
+  --color-dracula-comment: #545964;
+
+  /* UI Backgrounds */
+  --color-background-app: var(--color-bg);
+  --color-background-app-weak: var(--color-base-gray-20);
+  --color-background-elevated: var(--color-base-gray-30);
+  --color-background-elevated-hover: var(--color-base-gray-50);
+  --color-background-grouped: var(--color-base-gray-20);
+  --color-background-grouped-weak: var(--color-base-gray-10);
+  --color-background-object: var(--color-base-gray-30);
+
+  /* Buttons */
+  --color-background-button-primary: var(--color-primary);
+  --color-background-button-primary-active: #7aa2f7;
+  --color-background-button-primary-disabled: #414868;
+  --color-background-button-secondary: var(--color-base-gray-40);
+  --color-background-button-secondary-active: var(--color-base-gray-50);
+  --color-background-button-secondary-disabled: var(--color-base-gray-30);
+  --color-background-button-translucent: rgba(var(--color-base-white-rgb), 0.1);
+  --color-background-button-translucent-active: rgba(var(--color-base-white-rgb), 0.15);
+  --color-background-button-translucent-disabled: rgba(var(--color-base-white-rgb), 0.05);
+
+  /* Sidebar — NOTE: left-pane-bg forced OPAQUE below to fix the
+     unstyled/clipped strip. Leaving this "transparent" is what
+     caused the mismatched sliver on the left edge. */
+  --color-background-sidebar: rgba(var(--color-base-gray-30-rgb), 0.9);
+  --color-background-sidebar-opaque: var(--color-base-gray-30);
+  --color-background-sidebar-thread-focus: rgba(var(--color-base-white-rgb), 0.1);
+  --color-background-sidebar-thread-selected: var(--color-background-selected-primary);
+  --color-background-sidebar-thread-selected-unfocused: rgba(var(--color-base-white-rgb), 0.15);
+
+  /* Messages */
+  --color-background-message-active: var(--color-base-gray-20);
+  --color-background-message-bubble-received: var(--color-base-gray-50);
+  --color-background-message-bubble-sent: var(--color-primary);
+  --color-background-message-bubble-linked: var(--color-base-gray-20);
+
+  /* Selected States */
+  --color-background-selected-primary: var(--color-primary);
+  --color-background-selected-secondary: rgba(var(--color-base-white-rgb), 0.1);
+
+  /* Inputs */
+  --color-background-input: var(--color-base-gray-20);
+  --color-background-kbd: rgba(var(--color-base-white-rgb), 0.15);
+
+  /* Header/Menu */
+  --color-background-header-right: rgba(var(--color-base-gray-30-rgb), 0.92);
+  --color-background-header-right-opaque: var(--color-base-gray-30);
+  --color-background-menu: rgba(var(--color-base-gray-30-rgb), 0.9);
+  --color-background-menu-opaque: var(--color-base-gray-30);
+  --color-background-menu-option-hover: var(--color-primary);
+
+  /* Borders */
+  --color-border-neutrals: var(--color-base-gray-40);
+  --color-border-neutrals-strong: var(--color-base-gray-50);
+  --color-border-neutrals-weak: var(--color-base-gray-20);
+  --color-border-input: var(--color-base-gray-40);
+  --color-border-input-active: var(--color-base-gray-50);
+  --color-border-translucent: rgba(var(--color-base-white-rgb), 0.1);
+  --color-border-translucent-strong: rgba(var(--color-base-white-rgb), 0.15);
+  --color-border-translucent-strongest: rgba(var(--color-base-white-rgb), 0.5);
+  --color-border-translucent-weak: rgba(var(--color-base-white-rgb), 0.05);
+
+  /* Text */
+  --color-text-neutrals: var(--color-fg);
+  --color-text-neutrals-subtle: #e6e6e6;
+  --color-text-neutrals-weak: #a9b6e8;
+  --color-text-on-accent: #14151f;
+  --color-text-on-accent-weak: rgba(20, 21, 31, 0.8);
+  --color-text-translucent: rgba(var(--color-base-white-rgb), 0.9);
+  --color-text-translucent-subtle: rgba(var(--color-base-white-rgb), 0.6);
+  --color-text-translucent-weak: rgba(var(--color-base-white-rgb), 0.75);
+
+  /* Icons */
+  --color-icon-neutrals: #e6e6e6;
+  --color-icon-neutrals-strong: var(--color-fg);
+  --color-icon-neutrals-subtle: #a9b6e8;
+  --color-icon-neutrals-weak: #676f7d;
+  --color-icon-on-accent: rgba(20, 21, 31, 0.85);
+  --color-icon-on-accent-strong: rgba(20, 21, 31, 0.95);
+  --color-icon-on-accent-weak: rgba(20, 21, 31, 0.6);
+  --color-icon-translucent: rgba(var(--color-base-white-rgb), 0.6);
+  --color-icon-translucent-strong: rgba(var(--color-base-white-rgb), 0.9);
+  --color-icon-translucent-subtle: rgba(var(--color-base-white-rgb), 0.3);
+  --color-icon-translucent-weak: rgba(var(--color-base-white-rgb), 0.4);
+
+  /* Scrollbar */
+  --color-background-scrollbar: rgba(var(--color-base-white-rgb), 0.3);
+  --color-background-scrollbar-hover: rgba(var(--color-base-white-rgb), 0.5);
+
+  /* Misc */
+  --color-background-tag: rgba(var(--color-base-white-rgb), 0.1);
+  --color-overlay-modal: rgba(0, 0, 0, 0.4);
+  --color-transparent: rgba(0, 0, 0, 0);
+
+  /* Panes — THE FIX: force opaque instead of transparent so no
+     underlying window color can peek through as a stray strip */
+  --left-pane-bg: var(--color-bg);
+  --right-pane-bg: var(--color-bg);
+
+  /* Legacy/Status */
+  --mark-bg: #1f253f;
+  --error-color: #eb6572;
+  --warning-color: #e5c07b;
+  --snoozed-indicator-bg: #e5c07b;
+  --error-indicator-bg: var(--error-color);
+  --message-snoozed-border: #e5c07b;
+  --message-errored-beacon: var(--error-color);
+  --sms-sent-bg: #72c369;
+
+  /* Audio Bar */
+  --compose-message-accent: #d8d8d8;
+  --audio-bar-button: #d8d8d8;
+  --audio-bar-preview-progress: #ffffff;
+  --audio-bar-bg: #1d1f2d;
+  --audio-bar-border: #414868;
+
+  /* Keyboard Keys */
+  --key-border: #414868;
+  --key-bg: linear-gradient(to bottom, #222332, #1a1b26);
+  --color-key-bottom-bg: #1d1f2d;
+
+  /* Preferences */
+  --prefs-well: #1d1f2d;
+
+  /* ANSI — Tokyo Gogh Alt */
+  --ansi-black: #1a1b26;
+  --ansi-red: #eb6572;
+  --ansi-green: #72c369;
+  --ansi-yellow: #e5c07b;
+  --ansi-blue: #6199ef;
+  --ansi-magenta: #c678dd;
+  --ansi-cyan: #36c0c0;
+  --ansi-white: #c0caf5;
+  --ansi-bright-black: #545964;
+  --ansi-bright-red: #f7768e;
+  --ansi-bright-green: #72c369;
+  --ansi-bright-yellow: #e5c07b;
+  --ansi-bright-blue: #7aa2f7;
+  --ansi-bright-magenta: #c678dd;
+  --ansi-bright-cyan: #36c0c0;
+  --ansi-bright-white: #ffffff;
+}
+
+/* === DARK MODE — same Tokyo Gogh Alt values, so it stays
+   consistent regardless of OS light/dark setting === */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1b26;
+    --color-bg-rgb: 26, 27, 38;
+    --color-fg: #c0caf5;
+    --color-fg-rgb: 192, 202, 245;
+    --color-primary: #6199ef;
+    --color-primary-rgb: 97, 153, 239;
+
+    --color-background-app: var(--color-bg);
+    --color-background-sidebar: rgba(29, 31, 45, 0.9);
+    --color-background-sidebar-opaque: #1d1f2d;
+
+    --left-pane-bg: var(--color-bg);
+    --right-pane-bg: var(--color-bg);
+  }
+}
+
+/* === FUNCTIONAL COLORS === */
+:root {
+  --functional-red: #eb6572;
+  --functional-orange: #e08f68;
+  --functional-green: #72c369;
+  --functional-cyan: #36c0c0;
+  --functional-purple: #c678dd;
+
+  --focus-ring: var(--functional-purple);
+  --link-color: var(--functional-cyan);
+  --danger-bg: var(--functional-red);
+  --success-bg: var(--functional-green);
+  --warning-bg: var(--color-dracula-yellow);
+}
+
+/* === TRANSPARENCY OVERRIDES === */
+.no-transparency,
+.reduce-transparency {
+  --left-pane-bg: var(--color-background-sidebar-opaque);
+  --color-background-header-right: var(--color-background-header-right-opaque);
+  --color-background-menu: var(--color-background-menu-opaque);
+}
