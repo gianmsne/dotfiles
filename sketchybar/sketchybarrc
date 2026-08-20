@@ -47,7 +47,8 @@ SELECTION=0xff1f253f
    y_offset=5 \
    corner_radius=15 \
    blur_radius=30 \
-   color=0xff16161e
+   color=0xff16161e \
+   display=all
 
 ### Add event listener for aerospace
 sketchybar --add event aerospace_workspace_change
@@ -120,7 +121,7 @@ sketchybar --add item spacer.1 left \
            --set spacer.1 \
              icon.drawing=off \
              label.drawing=off \
-             width=50
+             width=30
 
 sketchybar --add item brew left \
            --set brew \
