@@ -4,6 +4,7 @@
 RESPONSE=$(curl -s --max-time 5 "https://wttr.in/Melbourne?format=%C|%t")
 CONDITION=$(echo "$RESPONSE" | cut -d'|' -f1 | tr '[:upper:]' '[:lower:]')
 TEMP=$(echo "$RESPONSE" | cut -d'|' -f2)
+TEMP="${TEMP#+}"
 
 if [ -z "$RESPONSE" ]; then
   sketchybar --set weather icon="" label="N/A"
