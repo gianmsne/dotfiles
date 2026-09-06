@@ -85,14 +85,13 @@ sketchybar --add item apple left \
 
 ##### Adding Aerospace Space Indicators #####
 
-for sid in Z X C V B N; do
+for sid in Z X C V B; do
     case "$sid" in
         Z) label="1" ;;
         X) label="2" ;;
         C) label="3" ;;
         V) label="4" ;;
         B) label="5" ;;
-        N) label="6" ;;
     esac
 
     sketchybar --add item space.$sid left \
