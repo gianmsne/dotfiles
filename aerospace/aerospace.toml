@@ -77,12 +77,14 @@ key-mapping.preset = 'qwerty'
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+#                 Get monitors: aerospace list-monitors
 gaps.inner.horizontal = 8
 gaps.inner.vertical =   8
 gaps.outer.left =       8
 gaps.outer.bottom =     8
 gaps.outer.top = [
                         { monitor."G32QC A" = 50 },
+                        { monitor."Q27G40E" = 50 },
                         { monitor."LS24C36x" = 47 },
                         { monitor.main = 16 },
                         24
