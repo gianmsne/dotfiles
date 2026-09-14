@@ -180,3 +180,8 @@ gaps.outer.right =      8
     alt-shift-j = ['join-with down', 'mode main']
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
+
+[[on-window-detected]]
+if.app-id = 'com.netacad.PacketTracer9.0.0'
+if.window-title-regex-substring = '^(?!Cisco Packet Tracer$).*'
+run = 'layout floating'
