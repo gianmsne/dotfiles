@@ -86,6 +86,7 @@ gaps.outer.top = [
                         { monitor."G32QC A" = 50 },
                         { monitor."Q27G40E" = 50 },
                         { monitor."LS24C36x" = 47 },
+                        { monitor."C24F390" = 50},
                         { monitor.main = 16 },
                         24
                  ] 
@@ -184,4 +185,9 @@ gaps.outer.right =      8
 [[on-window-detected]]
 if.app-id = 'com.netacad.PacketTracer9.0.0'
 if.window-title-regex-substring = '^(?!Cisco Packet Tracer$).*'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Bitwarden'
 run = 'layout floating'
