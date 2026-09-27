@@ -191,3 +191,12 @@ run = 'layout floating'
 if.app-id = 'app.zen-browser.zen'
 if.window-title-regex-substring = 'Bitwarden'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'app.zen-browser.zen'
+if.window-title-regex-substring = 'Bitwarden'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-id = 'com.utmapp.UTM'
+run = 'layout floating'
